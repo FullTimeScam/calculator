@@ -12,6 +12,17 @@ function onClickNumber(number) {
     //0이 아니면 숫자를 계속 추가
     resultElement.innerHTML += number;
   }
-
   console.log(resultElement.innerHTML.length);
+}
+
+//+ - * / 눌렀을 때
+//현재 입력한 숫자를 저장 (문자->숫자)
+// resultElement = 0
+
+function onClickOperator(inputOperator) {
+  result = +resultElement.innerHTML;
+
+  resultElement.innerHTML = 0;
+
+  operator = inputOperator;
 }
