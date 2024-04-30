@@ -49,3 +49,14 @@ function onClickEnter() {
       console.log("잘못된 연산자입니다.");
   }
 }
+
+function onClickDelete() {
+  resultElement.innerHTML = resultElement.innerHTML.substring(
+    0,
+    resultElement.innerHTML.length - 1
+  );
+
+  if (resultElement.innerHTML.length === 0) {
+    resultElement.innerHTML = 0;
+  }
+}
