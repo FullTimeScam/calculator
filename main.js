@@ -1,4 +1,5 @@
 let result = 0;
+let operator = "";
 const resultElement = document.querySelector(".result");
 
 resultElement.innerHTML = result;
@@ -12,7 +13,6 @@ function onClickNumber(number) {
     //0이 아니면 숫자를 계속 추가
     resultElement.innerHTML += number;
   }
-  console.log(resultElement.innerHTML.length);
 }
 
 //+ - * / 눌렀을 때
@@ -25,4 +25,27 @@ function onClickOperator(inputOperator) {
   resultElement.innerHTML = 0;
 
   operator = inputOperator;
+}
+
+function onClickEnter() {
+  switch (operator) {
+    case "+":
+      result += +resultElement.innerHTML;
+      resultElement.innerHTML = result;
+      break;
+    case "-":
+      result -= +resultElement.innerHTML;
+      resultElement.innerHTML = result;
+      break;
+    case "*":
+      result *= +resultElement.innerHTML;
+      resultElement.innerHTML = result;
+      break;
+    case "/":
+      result = parseInt(result / +resultElement.innerHTML, 10);
+      resultElement.innerHTML = result;
+      break;
+    default:
+      console.log("잘못된 연산자입니다.");
+  }
 }
